@@ -14,7 +14,7 @@ function generateRandomExcuse() {
     "right on time",
     "when I finished",
     "during my lunch",
-    "while I was praying"
+    "while I was praying",
   ];
 
   const randomWho = who[Math.floor(Math.random() * who.length)];
@@ -23,8 +23,14 @@ function generateRandomExcuse() {
   const randomWhen = when[Math.floor(Math.random() * when.length)];
 
   const excuse = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
+  console.log(excuse);
 
   return excuse;
 }
 
 console.log(generateRandomExcuse());
+
+window.onload = () => {
+  const button = document.querySelector("#excusebutton");
+  button.onclick = generateRandomExcuse;
+};
