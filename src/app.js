@@ -32,5 +32,8 @@ console.log(generateRandomExcuse());
 
 window.onload = () => {
   const button = document.querySelector("#excusebutton");
-  button.onclick = generateRandomExcuse;
+  const p = document.querySelector("#excuse");
+  button.onclick = () => {
+    p.innerHTML = generateRandomExcuse();
+  };
 };
