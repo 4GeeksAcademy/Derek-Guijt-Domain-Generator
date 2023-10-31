@@ -5,35 +5,32 @@ import "./index.html";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-function generateRandomExcuse() {
-  let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
-  let when = [
-    "before the class",
-    "right on time",
-    "when I finished",
-    "during my lunch",
-    "while I was praying",
-  ];
 
-  const randomWho = who[Math.floor(Math.random() * who.length)];
-  const randomAction = action[Math.floor(Math.random() * action.length)];
-  const randomWhat = what[Math.floor(Math.random() * what.length)];
-  const randomWhen = when[Math.floor(Math.random() * when.length)];
 
-  const excuse = `${randomWho} ${randomAction} ${randomWhat} ${randomWhen}`;
-  console.log(excuse);
+function generateDomainNames() {
+  let pronouns = ['the', 'our'];
+  let adjectives = ['great', 'big'];
+  let nouns = ['jogger', 'raccoon'];
+  
+  const domainNames = [];
 
-  return excuse;
+  for (const pronoun of pronouns) {
+    for (const adjective of adjectives) {
+      for (const noun of nouns) {
+        const domainName = `${pronoun}${adjective}${noun}.com`;
+        domainNames.push(domainName);
+      }
+    }
+  }
+
+  return domainNames;
 }
-
-console.log(generateRandomExcuse());
+console.log(generateDomainNames());
 
 window.onload = () => {
-  const button = document.querySelector("#excusebutton");
-  const p = document.querySelector("#excuse");
+  const button = document.querySelector("#domainbutton");
+  const p = document.querySelector("#domain");
   button.onclick = () => {
-    p.innerHTML = generateRandomExcuse();
+    p.innerHTML = generateDomainNames();
   };
 };
