@@ -31,6 +31,6 @@ window.onload = () => {
   const button = document.querySelector("#domainbutton");
   const p = document.querySelector("#domain");
   button.onclick = () => {
-    p.innerHTML = generateDomainNames();
+    p.innerHTML = generateDomainNames().join("<marquee><i class=\"fa-solid fa-flag-checkered\" style=\"color: #511f1f;\"></i></marquee>");
   };
 };
