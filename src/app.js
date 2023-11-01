@@ -11,14 +11,17 @@ function generateDomainNames() {
   let pronouns = ['the', 'our'];
   let adjectives = ['great', 'big'];
   let nouns = ['jogger', 'raccoon'];
+  let ends = ['.com', '.net'];
   
   const domainNames = [];
 
   for (const pronoun of pronouns) {
     for (const adjective of adjectives) {
       for (const noun of nouns) {
-        const domainName = `${pronoun}${adjective}${noun}.com`;
-        domainNames.push(domainName);
+        for (const end of ends) {
+          const domainName = `${pronoun}${adjective}${noun}${end}`;
+          domainNames.push(domainName);
+        }
       }
     }
   }
