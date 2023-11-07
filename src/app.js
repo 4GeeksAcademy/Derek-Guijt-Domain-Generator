@@ -1,17 +1,12 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 import "./index.html";
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-
 
 function generateDomainNames() {
-  let pronouns = ['the', 'our'];
-  let adjectives = ['great', 'big'];
-  let nouns = ['jogger', 'raccoon'];
-  let ends = ['.com', '.net'];
+  let pronouns = ['the', 'our', 'my', 'how'];
+  let adjectives = ['great', 'big', 'slimey', 'hairy'];
+  let nouns = ['jogger', 'raccoon' , 'building', 'dog'];
+  let ends = ['.com', '.net', 'org', 'us'];
   
   const domainNames = [];
 
@@ -25,11 +20,9 @@ function generateDomainNames() {
       }
     }
   }
-
   return domainNames;
 }
 console.log(generateDomainNames());
-
 window.onload = () => {
   const button = document.querySelector("#domainbutton");
   const p = document.querySelector("#domain");
